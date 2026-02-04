@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Understanding the Mission</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #e67e22; margin-top: 30px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .highlight { background-color: #e8f4fd; padding: 15px; border-left: 5px solid #3498db; margin: 15px 0; }
+        code { background-color: #eee; padding: 2px 5px; border-radius: 3px; font-family: 'Consolas', monospace; }
+        .mentor-note { font-style: italic; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+    <h1>Lesson 1: The Client's Requirement 🎯</h1>
+    <p class="mentor-note">"Welcome, student! Before we write a single line of code, we must understand WHAT we are building and WHY. Let's break down the mission."</p>
+
+    <div class="card">
+        <h2>1. The Problem</h2>
+        <p>Imagine you want to build a knowledge base about "Pregnancy" for your own website. Using <a href="https://babycenter.com">BabyCenter.com</a> as a source is great, but manually copying 500+ articles would take weeks.</p>
+        <p><strong>The Goal:</strong> Create a "Robot" (Automation) that does this for us automatically.</p>
+    </div>
+
+    <div class="card">
+        <h2>2. Specific Requirements</h2>
+        <p>The client (you!) didn't just want a simple page reader. You needed something smarter:</p>
+        <ul>
+            <li><strong>The "Deep Dive":</strong> The robot shouldn't just read the front page. It must click "See All", "Trimesters", and "Weeks" to find the hidden articles deep inside.</li>
+            <li><strong>Smart Extraction:</strong> It needs to tell the difference between a "Menu Page" (just links) and an "Article Page" (actual advice) and only save the articles.</li>
+            <li><strong>Self-Healing Database:</strong> If an article changes on the website tomorrow, our database should update automatically without creating duplicates.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>3. The Technical Wishlist</h2>
+        <p>To make this usable for non-coders, we needed:</p>
+        <ul>
+            <li><strong>A Dashboard:</strong> A visual screen to enter URLs and watch the robot work live.</li>
+            <li><strong>Supabase Integration:</strong> A modern cloud database to store the data securely.</li>
+            <li><strong>Background Mode:</strong> A way to let it run while we sleep (Task Scheduler).</li>
+        </ul>
+    </div>
+
+    <div class="highlight">
+        <strong>Mentor's Takeaway:</strong> <br>
+        Great software starts with clear requirements. We aren't just "scraping a site"; we are building an <em>Intelligent Content Aggregation Pipeline</em>.
+    </div>
+
+</body>
+</html>

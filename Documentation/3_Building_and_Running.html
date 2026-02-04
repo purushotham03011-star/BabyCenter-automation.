@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Building & Running</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #8e44ad;
+            margin-top: 30px;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid #8e44ad;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cmd {
+            background-color: #333;
+            color: #0f0;
+            padding: 10px;
+            font-family: monospace;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .mentor-note {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 3: The Build Manual 🏗️</h1>
+    <p class="mentor-note">"You have the code. Now, how do you make it come alive on a new machine? Here is your
+        step-by-step field guide."</p>
+
+    <div class="step">
+        <h2>Step 1: The Foundation (Dependencies)</h2>
+        <p>Just like a construction site needs raw materials, our Python program needs "Libraries". We list these in a
+            file called <code>requirements.txt</code>.</p>
+        <p>To install them, we run the "Pip" command:</p>
+        <div class="cmd">pip install -r requirements.txt</div>
+        <p>This downloads the ability to scrape (BeautifulSoup), talk to the web (Requests), and show the dashboard
+            (Streamlit).</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: The Keys (Configuration)</h2>
+        <p>We never hard-code passwords! We use a special file called <code>.env</code> (Environment Variables).</p>
+        <p>Inside this file, you safely keep your:</p>
+        <ul>
+            <li><code>SUPABASE_URL</code>: Where your database lives.</li>
+            <li><code>SUPABASE_KEY</code>: The password to open it.</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Launching the Dashboard</h2>
+        <p>To start the visual control center, we simplified the command into a "One-Click" file:
+            <code>Run_App.bat</code>.</p>
+        <p>Under the hood, it runs:</p>
+        <div class="cmd">streamlit run scraper_app.py</div>
+        <p>This spins up a local web server on your computer that you can access via your browser.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Going "Headless" (Automation)</h2>
+        <p>We don't want to keep the browser open forever. So we built <code>auto_updater.py</code>.</p>
+        <p>This is a "Ghost" version of our app. It has no screen. It just wakes up, does the work, and closes. Use
+            Windows Task Scheduler to run this file every morning.</p>
+    </div>
+
+    <h3>🎉 Graduation</h3>
+    <p>You now understand the full lifecycle: <strong>Requirement -> Design -> Code -> Deployment</strong>. You are
+        ready to build your own automations!</p>
+
+</body>
+
+</html>

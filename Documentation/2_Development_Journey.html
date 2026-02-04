@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: The Development Journey</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #27ae60;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+        }
+
+        .mentor-note {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 2: How We Built It 🛠️</h1>
+    <p class="mentor-note">"Now that we know the mission, let's talk about the tools in our belt. Why did we choose
+        Python? How does the robot 'think'?"</p>
+
+    <div class="card">
+        <h2>1. Choosing the Tech Stack</h2>
+        <p>We chose the "Power Trio" for modern automation:</p>
+        <ul>
+            <li><strong>Python:</strong> The language of data. Simple, powerful, and has great libraries.</li>
+            <li><strong>Streamlit:</strong> Allowed us to build a beautiful Web Dashboard in just 100 lines of code. No
+                HTML/CSS needed!</li>
+            <li><strong>Supabase:</strong> A database that acts like a spreadsheet but scales like Google. Perfect for
+                storing our articles.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. The Challenge: "The Maze"</h2>
+        <p>Websites are like mazes. If the robot just turns left at every link, it might get lost in the "Terms of
+            Service" or "Login" pages forever.</p>
+        <p><strong>The Solution: Priority Queue</strong></p>
+        <p>We gave our robot a "Brain". When it sees links, it sorts them:</p>
+        <div class="code-block">
+            If link says "See All" -> Go there FIRST (Priority!)
+            If link says "Privacy Policy" -> Ignore it.
+            If link looks like an Article -> Save it for later.
+        </div>
+        <p>This ensures we dig DEEP into the content (First Trimester -> Week 12) instead of getting stuck on the
+            surface.</p>
+    </div>
+
+    <div class="card">
+        <h2>3. The "Heuristic" Content Filter</h2>
+        <p>How does a robot know what an article is?</p>
+        <p>We wrote a rule: <em>"If a page has more than 500 characters of text in the main body, it's worth
+                saving."</em></p>
+        <p>If it's too short, it's probably just a menu page. We still check it for links, but we don't clog up our
+            database with empty pages.</p>
+    </div>
+
+    <div class="card">
+        <h2>4. Handling Updates (Upsert)</h2>
+        <p>We used a smart database command called <code>upsert</code> (Update + Insert). It means:</p>
+        <p><em>"Hey Database, here is an article. If you've never seen this URL, add it. If you HAVE seen it, just
+                update the text."</em></p>
+    </div>
+
+</body>
+
+</html>
